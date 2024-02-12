@@ -10,15 +10,19 @@ espacio=[ ,\t,\r,\r,\n]+
     public String strLexeme;
 %}
 %%
-int |
-if |
-else |
-while {strLexeme=yytext(); return Reservadas;}
+linea |
+curva |
+Bola |
+hit |
+defensa |
+carrera |
+inning {strLexeme=yytext(); return Reservadas;}
 {espacio} {/*Ignore*/}
 "(" {strLexeme=yytext(); return Delimitador;}
 ")" {strLexeme=yytext(); return Delimitador;}
 "{" {strLexeme=yytext(); return Delimitador;}
 "}" {strLexeme=yytext(); return Delimitador;}
+";" {strLexeme=yytext(); return DelimitadorCierre;}
 "//".* {/*Ignore*/}
 "=" {return Igual;}
 "+" {return Suma;}

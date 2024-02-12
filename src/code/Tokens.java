@@ -11,6 +11,7 @@ package code;
 public enum Tokens {
     Reservadas,
     Delimitador,
+    DelimitadorCierre,
     Igual,
     Suma,
     Resta,
